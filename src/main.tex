@@ -1,0 +1,76 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper]{geometry}
+\geometry{hscale=0.8,vscale=0.8,centering}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} % Exposant
+
+
+\usepackage{enumerate} % Listes
+\usepackage{amsmath} % Matrices
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{color}
+
+\usepackage{listings} % Lecture du code
+\usepackage{hyperref} % Hyperlien
+
+
+% Mise en page spéciale fancyhdr pour les en-têtes
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{} % Rien en haut de page au milieu
+\fancyhead[L]{\leftmark} % Nom du chapitre actuel en haut de page à gauche
+\fancyhead[R]{\thepage} % Numéro de page en haut de page à droite
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{} % Rien en bas de page au milieu
+\fancyfoot[L]{Open source pour ajout ou modification:\\https://github.com/Rodriguevb/INFO-F307-Genie\_logiciel\_et\_gestion\_de\_projets-Resume/} % Numéro de page en bas de page à gauche
+\fancyfoot[R]{\thepage} % Numéro de page en bas de page à droite
+\setlength{\headheight}{12.1638pt}
+
+
+\author{Rodrigue \textsc{Van Brande}} % Auteur
+\date{\today} % Date de compilation du pdf
+
+\pdfinfo{
+    /Author   (Rodrigue VAN BRANDE)
+    /Creator  (https://github.com/Rodriguevb/INFO-F307-Genie_logiciel_et_gestion_de_projets-Resume/)
+}
+
+%Création d'un subsub...section (avec \paragraph{} \subparagraph{})
+\usepackage{titlesec}
+
+%Profondeur pour la table des matières dans les titres
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% On rajoute les espaces
+\titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subparagraph}{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\newcommand{\fonction}[nb de parametre]{définition de la commande}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}}
+\newcommand{\subsubsubsubsection}[1]{\subparagraph{#1}}
+
+
+% Titre du PDF
+\title{INFO-F307 - Génie logiciel et gestion de projets\\Ragnhild \textsc{Van Der Straeten}\\Résumé du cours}
+
+\pdfinfo{
+/Title(INFO-F307 - Génie logiciel et gestion de projets)
+}
+
+\begin{document}
+    \maketitle       % Titre
+    \newpage         % Saut de page
+    \tableofcontents % table des matières / Besoin d'une double compilation
+    \newpage         % Saut de page
+
+    \input{1.resume/text}
+    
+\end{document}
