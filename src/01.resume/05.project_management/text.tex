@@ -1,0 +1,147 @@
+\section{Gestion de projets}
+
+
+
+\subsection{Introduction}
+
+
+
+\subsection{Rôles d'un gestionnaire de projet}
+Les trois grandes activités du gestionnaire sont:
+\begin{itemize}
+    \item \textbf{L’étude de faisabilité} : Il vérifie qu’un projet est possible et profitable.
+    \item \textbf{Le planning} : Difficile car il doit commencer avant d’avoir le moindre requirement.
+    \item \textbf{L’exécution} : Il tue.
+\end{itemize}
+
+
+
+\subsubsection{Définir les objectifs}
+Les objectifs de manière textuelle, sous forme de post-conditions.
+Les objectifs doivent être SMARTS:
+\begin{itemize}
+    \item \textbf{Spécifiques}: Concrets et bien définis.
+    \item \textbf{Mesurables}: On doit pouvoir mesurer si un objectif a été atteint ou pas.
+    \item \textbf{Réalisables}.
+    \item \textbf{Pertinents}.
+    \item Prendre en compte le \textbf{temps}.
+\end{itemize}
+Les \textbf{buts} ou \textbf{sous-objectif} sont les détails des objectifs. On rentre dans le technique. Contrairement aux objectifs, ils peuvent être associés à une personne.
+
+
+
+\subsection{La gestion de projet}
+
+
+
+\subsubsection{Appréciation de l'état du projet}
+Il faut prendre des décisions, qui demandent des compromis. Généralement on fixe la date et le cout et la qualité en prend un cout. Le développement agile fixe le cout, la qualité et le temps mais joue sur les fonctionnalités.
+
+
+
+\subsubsection{Business case}
+L’étude de fiabilité peut servir de \textbf{business case}.
+Un business case est un document qui suit une structure bien définie. On commence par une introduction, une description du problème, des opportunités, puis la description du projet, le marché et l’infrastructure dans lesquels il s’insert, la demande pour le projet, ses bénéfices.
+On fini le document avec le plan d’implémentation, les couts, les aspects financiers, les risques et le plan de gestion.
+
+
+
+\subsubsection{Méthode de gestion de projet}
+Le gestionnaire de projet doit savoir quoi faire et quand.
+Une manière de faire est de suivre la méthode PRINCE 2, une méthode standard. Elle est adapté aussi bien aux petits qu’aux grands projets.
+On va étudier une méthodologie très proche et plus ouverte.
+
+La première étape est bien sûr le choix d’un projet sur lequel travailler. Les deux étapes suivantes se font en parallèles : Identifier les objectifs et identifier l’infrastructure nécessaire. VIennent ensuite l’analyse des caractéristiques, l’identification des produits et activités, l’estimation de l’effort et des risques, l’allocation des ressources, puis la publication d’un plan d’action.
+
+
+
+\subsection{Estimation de l’effort}
+Un projet est un succès s’il est livré à temps, en respectant le budget, les fonctionnalités demandées et la qualité requise.
+Les efforts demandés doivent être estimés. C’est une tâche difficile.
+
+Les stratégies d’estimation sont les suivantes:
+\begin{itemize}
+    \item \textbf{Jugement par un expert} : Quelqu’un vient et se prononce. Peu cher mais peu fiable.
+    \item \textbf{Estimation par analogie} : On compare différents projets et leurs estimations.
+    \item \textbf{Loi de Parkinson} : Le projet s’étend pour remplir tout le temps alloué.
+    \item \textbf{Pricing to win} : On fait son maximum dans le budget donné.
+\end{itemize}
+Les deux derniers points ne prédisent pas le coût ni le temps. Deux stratégies plus complexes, sont plus efficaces:
+\begin{itemize}
+    \item \textbf{Décomposition} : On découpe le projet en morceaux dont on estime le coût.
+    \item \textbf{Modélisation algorithmique du coût} : On se sert de données historiques, de faits, de statistiques et on calcule de manière objective comment ces données s’appliquent au projet à effectuer.
+\end{itemize}
+
+
+
+\subsubsection{La décomposition}
+L’approche \textbf{top-down} commence au niveau du système complet, ensuite on découpe le système et on estime l’effort nécessaire au développement des différents composants.
+
+L’approche \textbf{bottom-up} commence par tout découper, et on estime le coût de chaque composant. On les sommes ensuite pour obtenir le coût total du projet.
+
+
+
+\subsubsection{Le modèle COCOMO}
+Ce modèle est le plus utilisé. Il distingue trois types de projets :
+\begin{itemize}
+	\item Les simples ;
+   	\item Les semi-détaché ;
+    \item les inclus.
+\end{itemize}
+Chaque classe de projet possède des valeurs pour 4 paramètres : $a$,$b$,$c$ et $d$.\\
+Ces paramètres apparaissent dans :
+\begin{center}
+    \begin{tabular}{|lll}
+        $Effort$ & $=$ & $a \times KLOC^b$\\
+        $Duree$  & $=$ & $c \times Effort^d$
+    \end{tabular}
+    (pour un simple $a=2.4$, $b=1.05$, $c=2.5$, $d=0.38$)
+\end{center}
+Dans COCOMO 2, le modèle évolue un peu. L’effort est :
+\begin{center}
+$A(taille)^{scalefactor} \times em1 \times em2 \times ...$
+\end{center}
+Dans COCOMO 2, la formule change avec le projet, certaines variables sont utilisées et pas d’autres. Les $emX$ sont des nombres qui expriment la difficulté du projet.
+
+
+
+\subsection{Planning d’activités}
+Après avoir fait tout ça, il faut choisir des dates de début et de fin pour chaque activité.
+Les \textbf{réseaux d’activité} permettent de voir les liens entre les activités, et quelles activités peuvent être effectuées en parallèle.
+Pour identifier les activités, on prend le produit, on le découpe en morceaux, et ces morceaux sont découpés en activités. $\Rightarrow$ Approche \textbf{produit}.
+Sinon on peut d’abord identifier les activités, et le produit sera leur réunion. $\Rightarrow$ Approche \textbf{travail}.
+
+
+
+\subsection{Construction de réseau d’activité}
+Deux types de réseaux d’activité :
+\begin{enumerate}
+	\item Met les activités sur les arcs, et qui relient des états qui n’ont pas de durée.
+	\item Activités sur les noeuds ( qui ont la des durées ), et les arcs ne sont que des relations de précédence.
+\end{enumerate}
+
+Un réseau ne peut contenir de boucle.
+Une fois qu’on a les activités avec leurs durées, il faut calculer quand elles démarrent.
+On se base sur le \textbf{chemin critique}. Ce chemin doit être le plus court possible, celles qui ne peuvent accepter un retard sans retarder tout le projet.
+
+Le \textbf{flottement} est la différence entre le départ le plus tard et le plus tôt d’une activité. Le chemin critique est simplement le chemin qui passe par toutes les activités qui ont un flottement de zéro.
+
+Les \textbf{chemins sous-critiques} sont les chemins qui passent par des activités avec un flottement très faible.
+
+
+
+\subsection{Organisation de l’équipe}
+Trois types d’entreprises:
+\begin{enumerate}
+	\item \textbf{Orientées projets} : Tout tourne autour du projet.
+	\item \textbf{Orientées fonctions} : département des finances, IT, marketing, ...
+	\item \textbf{Organisation matricielle} : mélange des deux.
+\end{enumerate}
+
+
+
+\subsubsection{Équipes de développement}
+Elle doit être la plus petite possible ( entre 3 et 7 personnes). S’il y en a plus, trop de problème de communication.
+L’\textbf{egoless programming} se base sur l’idée que le groupe est plus important que l’individu.
+La \textbf{décomposition hiérarchique} est une organisation où chaque personne a un chef, et les chefs ont leurs chefs.
+Les équipres à \textbf{chiefs programmer} sont des équipes composées de programmeurs très réputés qui prennent toutes les responsabilités.
